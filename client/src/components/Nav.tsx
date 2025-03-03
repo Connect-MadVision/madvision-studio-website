@@ -26,9 +26,9 @@ export function Nav() {
       {LINKS.map((link) => (
         <Button
           key={link.href}
-          variant="ghost"
+          variant="link"
           onClick={() => handleClick(link.href)}
-          className="text-lg font-medium text-white hover:text-[#FF0000]"
+          className="text-base font-medium text-white/80 hover:text-[#00FF00] transition-colors duration-200"
         >
           {link.label}
         </Button>
@@ -37,25 +37,30 @@ export function Nav() {
   );
 
   return (
-    <nav className="fixed top-0 z-50 w-full bg-black/80 backdrop-blur-sm border-b border-[#00FF00]/20">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <div className="text-2xl font-bold text-[#00FF00]">Madvision Studio</div>
+    <nav className="fixed top-0 z-50 w-full bg-black/90 backdrop-blur-md border-b border-[#00FF00]/10">
+      <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#00FF00] to-[#FF0000] flex items-center justify-center">
+            <span className="text-lg font-bold text-white">M</span>
+          </div>
+          <span className="text-xl font-bold text-white">Madvision</span>
+        </div>
 
         {isMobile ? (
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="text-white hover:text-[#00FF00]">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent>
-              <div className="flex flex-col gap-4 mt-8">
+            <SheetContent className="bg-black/95 border-l border-[#00FF00]/10">
+              <div className="flex flex-col gap-6 mt-12">
                 <NavLinks />
               </div>
             </SheetContent>
           </Sheet>
         ) : (
-          <div className="flex gap-8">
+          <div className="flex items-center gap-8">
             <NavLinks />
           </div>
         )}
