@@ -14,7 +14,7 @@ export function About() {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#FF0000]/20 to-[#00FF00]/20 z-10"></div>
             <img
-              src="new_image_path.jpg" // Replace with the correct image path
+              src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=2070&q=80"
               alt="About Madvision Studio"
               className="object-cover w-full h-full"
             />
