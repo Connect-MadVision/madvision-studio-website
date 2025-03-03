@@ -2,14 +2,8 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { FaTwitter, FaLinkedin, FaDiscord, FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-
-const contactInfo = [
-  {
-    title: "Get in Touch",
-    email: "hello.madvision@gmail.com",
-    description: "For all inquiries, support, and business opportunities"
-  }
-];
+import { Button } from "@/components/ui/button";
+import { Mail } from "lucide-react";
 
 const socialLinks = [
   {
@@ -52,7 +46,7 @@ const socialLinks = [
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 bg-black">
+    <section id="contact" className="py-20 bg-black relative overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -66,28 +60,35 @@ export function Contact() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Cards */}
+          {/* Contact Card */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="grid gap-6"
           >
-            {contactInfo.map((info, index) => (
-              <Card key={info.title} className="bg-black/40 border-[#00FF00]/20 backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-[#00FF00] mb-2">{info.title}</h3>
-                  <p className="text-white/80 mb-4">{info.description}</p>
-                  <a 
-                    href={`mailto:${info.email}`}
-                    className="text-white/60 hover:text-[#00FF00] transition-colors duration-200"
-                  >
-                    {info.email}
-                  </a>
-                </CardContent>
-              </Card>
-            ))}
+            <Card className="bg-black/40 border-[#00FF00]/20 backdrop-blur-sm overflow-hidden relative group">
+              <CardContent className="p-8">
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-[#00FF00]/20 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+
+                <h3 className="text-2xl font-bold text-white mb-6 relative">Get in Touch</h3>
+                <p className="text-white/80 mb-8 leading-relaxed max-w-md">
+                  Have questions about our games? Want to collaborate? Or just want to say hello? 
+                  We'd love to hear from you! Reach out to us anytime.
+                </p>
+
+                <Button
+                  className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black font-semibold group relative overflow-hidden"
+                  onClick={() => window.location.href = 'mailto:hello.madvision@gmail.com'}
+                >
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+                  <div className="flex items-center gap-2">
+                    <Mail className="w-5 h-5" />
+                    <span>hello.madvision@gmail.com</span>
+                  </div>
+                </Button>
+              </CardContent>
+            </Card>
           </motion.div>
 
           {/* Social Links */}
@@ -98,9 +99,9 @@ export function Contact() {
             viewport={{ once: true }}
           >
             <Card className="bg-black/40 border-[#00FF00]/20 backdrop-blur-sm h-full">
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-bold text-white mb-6">Follow Our Journey</h3>
-                <div className="grid grid-cols-3 gap-6">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-white mb-8">Follow Our Journey</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
                   {socialLinks.map((social) => (
                     <HoverCard key={social.name}>
                       <HoverCardTrigger>
@@ -108,14 +109,16 @@ export function Contact() {
                           href={social.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`flex flex-col items-center gap-2 text-white/80 hover:text-[#00FF00] transition-all duration-300 group ${social.color}`}
+                          className={`flex flex-col items-center gap-3 text-white/80 hover:text-[#00FF00] transition-all duration-300 group ${social.color}`}
                         >
-                          <social.icon className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
+                          <div className="p-4 rounded-full bg-black/50 border border-[#00FF00]/10 group-hover:border-[#00FF00]/30 transition-colors duration-300">
+                            <social.icon className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
+                          </div>
                           <span className="text-sm font-medium">{social.name}</span>
                         </a>
                       </HoverCardTrigger>
                       <HoverCardContent className="bg-black/95 border-[#00FF00]/20">
-                        <p className="text-sm text-white/80">Follow us on {social.name}</p>
+                        <p className="text-sm text-white/80">Connect with us on {social.name}</p>
                       </HoverCardContent>
                     </HoverCard>
                   ))}
