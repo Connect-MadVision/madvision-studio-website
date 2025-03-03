@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useState } from "react";
 
 const LINKS = [
   { href: "#home", label: "Home" },
@@ -15,9 +16,11 @@ const LINKS = [
 export function Nav() {
   const isMobile = useIsMobile();
   const [_, setLocation] = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = (href: string) => {
     setLocation(href);
+    setIsOpen(false); // Close the sheet when a link is clicked
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -48,7 +51,7 @@ export function Nav() {
         </div>
 
         {isMobile ? (
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="text-white hover:text-[#00FF00]">
                 <Menu className="h-6 w-6" />

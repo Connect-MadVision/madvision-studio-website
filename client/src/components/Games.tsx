@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { SiGoogleplay } from "react-icons/si";
+import { SiGoogleplay, SiAppstore } from "react-icons/si";
 import HighwayDashIcon from "../../../attached_assets/HIGHWAY DASH Icon.png";
 
 const games = [
@@ -9,7 +9,8 @@ const games = [
     title: "Highway Dash",
     description: "Race through endless highways in this adrenaline-pumping endless runner.",
     image: HighwayDashIcon,
-    playStoreLink: "https://play.google.com/store/apps/details?id=com.nexgenstudios.highwaydash&pcampaignid=web_share"
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.nexgenstudios.highwaydash&pcampaignid=web_share",
+    appStoreLink: "https://apps.apple.com/us/app/highway-dash/id123456789" // Replace with actual App Store link
   },
   {
     title: "Zombie Shooter Survival",
@@ -67,13 +68,40 @@ export function Games() {
                 <CardContent className="p-6">
                   <h3 className="text-2xl font-bold mb-2 text-[#00FF00]">{game.title}</h3>
                   <p className="text-white/80 mb-4">{game.description}</p>
-                  {game.playStoreLink && (
+                  {!game.comingSoon && (
+                    <div className="space-y-2">
+                      {game.playStoreLink && (
+                        <Button
+                          className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black font-semibold group relative overflow-hidden"
+                          onClick={() => window.open(game.playStoreLink, "_blank")}
+                        >
+                          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+                          <div className="flex items-center justify-center gap-2">
+                            <SiGoogleplay className="h-5 w-5" />
+                            <span>Get it on Play Store</span>
+                          </div>
+                        </Button>
+                      )}
+                      {game.appStoreLink && (
+                        <Button
+                          className="w-full bg-[#007AFF] hover:bg-[#007AFF]/90 text-white font-semibold group relative overflow-hidden"
+                          onClick={() => window.open(game.appStoreLink, "_blank")}
+                        >
+                          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+                          <div className="flex items-center justify-center gap-2">
+                            <SiAppstore className="h-5 w-5" />
+                            <span>Download on App Store</span>
+                          </div>
+                        </Button>
+                      )}
+                    </div>
+                  )}
+                  {game.comingSoon && (
                     <Button
-                      className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black font-semibold"
-                      onClick={() => window.open(game.playStoreLink, "_blank")}
+                      className="w-full bg-[#00FF00]/20 text-[#00FF00] border border-[#00FF00]/50 cursor-not-allowed"
+                      disabled
                     >
-                      <SiGoogleplay className="mr-2 h-5 w-5" />
-                      Get it on Play Store
+                      Coming Soon
                     </Button>
                   )}
                 </CardContent>
