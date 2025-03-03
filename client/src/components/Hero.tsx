@@ -69,7 +69,7 @@ export function Hero() {
               <Button
                 size="lg"
                 className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black font-semibold group relative overflow-hidden"
-                onClick={() => window.open("https://play.google.com/store", "_blank")}
+                onClick={() => window.open("https://play.google.com/store/apps/details?id=com.nexgenstudios.highwaydash&pcampaignid=web_share", "_blank")}
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
                 <div className="flex items-center gap-2">

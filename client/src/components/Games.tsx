@@ -9,7 +9,7 @@ const games = [
     title: "Highway Dash",
     description: "Race through endless highways in this adrenaline-pumping endless runner.",
     image: HighwayDashIcon,
-    playStoreLink: "https://play.google.com/store"
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.nexgenstudios.highwaydash&pcampaignid=web_share"
   },
   {
     title: "Zombie Shooter Survival",
