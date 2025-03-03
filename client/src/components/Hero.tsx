@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section 
       id="home"
-      className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-black"
+      className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-black w-full" //Added w-full here as instructed, but this alone likely won't solve the aspect ratio issue.
     >
       {/* Background with animated gradient and gaming image */}
       <div 

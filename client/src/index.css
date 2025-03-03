@@ -48,3 +48,23 @@ html {
 .text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-[#00FF00] to-[#FF0000];
 }
+/* Mobile viewport fixes */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .container {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
