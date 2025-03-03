@@ -1,9 +1,64 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaGithub, FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+
+const contactInfo = [
+  {
+    title: "General Inquiries",
+    email: "contact@madvisionstudio.com",
+    description: "For general questions and information"
+  },
+  {
+    title: "Business Development",
+    email: "business@madvisionstudio.com",
+    description: "For partnerships and business opportunities"
+  },
+  {
+    title: "Technical Support",
+    email: "support@madvisionstudio.com",
+    description: "For game-related support and bug reports"
+  }
+];
+
+const socialLinks = [
+  {
+    name: "X (Twitter)",
+    icon: FaTwitter,
+    url: "https://twitter.com",
+    color: "hover:text-blue-400"
+  },
+  {
+    name: "Instagram",
+    icon: FaInstagram,
+    url: "https://instagram.com",
+    color: "hover:text-pink-500"
+  },
+  {
+    name: "Meta",
+    icon: FaFacebook,
+    url: "https://facebook.com",
+    color: "hover:text-blue-600"
+  },
+  {
+    name: "WhatsApp",
+    icon: FaWhatsapp,
+    url: "https://whatsapp.com",
+    color: "hover:text-green-500"
+  },
+  {
+    name: "LinkedIn",
+    icon: FaLinkedin,
+    url: "https://linkedin.com",
+    color: "hover:text-blue-500"
+  },
+  {
+    name: "GitHub",
+    icon: FaGithub,
+    url: "https://github.com",
+    color: "hover:text-purple-500"
+  }
+];
 
 export function Contact() {
   return (
@@ -16,100 +71,76 @@ export function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">Contact Us</h2>
-          <p className="text-[#00FF00] text-lg">Get in touch with our team</p>
+          <h2 className="text-4xl font-bold text-white mb-4">Connect With Us</h2>
+          <p className="text-[#00FF00] text-lg">Join the Madvision Studio community</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
+          {/* Contact Cards */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            className="grid gap-6"
           >
-            <Card className="bg-black border-[#00FF00]/20">
-              <CardContent className="p-6">
-                <form className="space-y-6">
-                  <div>
-                    <Input
-                      type="text"
-                      placeholder="Your Name"
-                      className="bg-black/50 border-[#00FF00]/20 text-white"
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      type="email"
-                      placeholder="Your Email"
-                      className="bg-black/50 border-[#00FF00]/20 text-white"
-                    />
-                  </div>
-                  <div>
-                    <Textarea
-                      placeholder="Your Message"
-                      className="bg-black/50 border-[#00FF00]/20 text-white min-h-[150px]"
-                    />
-                  </div>
-                  <Button className="w-full bg-[#FF0000] hover:bg-[#FF0000]/90 text-white">
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            {contactInfo.map((info, index) => (
+              <Card key={info.title} className="bg-black/40 border-[#00FF00]/20 backdrop-blur-sm">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-[#00FF00] mb-2">{info.title}</h3>
+                  <p className="text-white/80 mb-4">{info.description}</p>
+                  <a 
+                    href={`mailto:${info.email}`}
+                    className="text-white/60 hover:text-[#00FF00] transition-colors duration-200"
+                  >
+                    {info.email}
+                  </a>
+                </CardContent>
+              </Card>
+            ))}
           </motion.div>
 
+          {/* Social Links and Office Info */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-8"
           >
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Get in Touch</h3>
-              <p className="text-white/80 mb-6">
-                Have questions about our games or services? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
-              </p>
-            </div>
+            <Card className="bg-black/40 border-[#00FF00]/20 backdrop-blur-sm h-full">
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-bold text-white mb-6">Follow Our Journey</h3>
+                <div className="grid grid-cols-3 gap-6 mb-8">
+                  {socialLinks.map((social) => (
+                    <HoverCard key={social.name}>
+                      <HoverCardTrigger>
+                        <a
+                          href={social.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`flex flex-col items-center gap-2 text-white/80 hover:text-[#00FF00] transition-all duration-300 group ${social.color}`}
+                        >
+                          <social.icon className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
+                          <span className="text-sm font-medium">{social.name}</span>
+                        </a>
+                      </HoverCardTrigger>
+                      <HoverCardContent className="bg-black/95 border-[#00FF00]/20">
+                        <p className="text-sm text-white/80">Follow us on {social.name}</p>
+                      </HoverCardContent>
+                    </HoverCard>
+                  ))}
+                </div>
 
-            <div>
-              <h4 className="text-xl font-bold text-white mb-4">Email Us</h4>
-              <div className="space-y-2 text-white/80">
-                <p>General: contact@madvisionstudio.com</p>
-                <p>Business: business@madvisionstudio.com</p>
-                <p>Support: support@madvisionstudio.com</p>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-xl font-bold text-white mb-4">Follow Us</h4>
-              <div className="flex gap-4">
-                <a 
-                  href="https://twitter.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#00FF00] hover:text-[#00FF00]/80"
-                >
-                  <FaTwitter className="w-6 h-6" />
-                </a>
-                <a 
-                  href="https://linkedin.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#00FF00] hover:text-[#00FF00]/80"
-                >
-                  <FaLinkedin className="w-6 h-6" />
-                </a>
-                <a 
-                  href="https://github.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#00FF00] hover:text-[#00FF00]/80"
-                >
-                  <FaGithub className="w-6 h-6" />
-                </a>
-              </div>
-            </div>
+                <div className="mt-8 p-6 bg-[#00FF00]/5 rounded-lg border border-[#00FF00]/10">
+                  <h4 className="text-xl font-bold text-white mb-4">Visit Our Studio</h4>
+                  <div className="space-y-2 text-white/80">
+                    <p>123 Game Street</p>
+                    <p>Digital District</p>
+                    <p>GameCity, GC 12345</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </div>

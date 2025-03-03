@@ -8,11 +8,14 @@ export function Hero() {
       id="home"
       className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-black"
     >
-      {/* Background with animated gradient */}
+      {/* Background with animated gradient and gaming image */}
       <div 
         className="absolute inset-0 bg-black"
         style={{
-          background: 'radial-gradient(circle at 50% 50%, rgba(0, 255, 0, 0.15), transparent 70%)',
+          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)), url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=2070&q=80')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
         }}
       />
 
@@ -40,15 +43,23 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left"
           >
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00FF00] to-white">
-                Highway
-              </span>
-              <span className="text-[#FF0000]"> Dash</span>
-            </h1>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-8"
+            >
+              <h2 className="text-2xl font-bold text-[#00FF00] mb-2">Welcome to</h2>
+              <h1 className="text-5xl lg:text-7xl font-bold mb-6">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00FF00] to-white">
+                  Madvision
+                </span>
+                <span className="text-[#FF0000]"> Studio</span>
+              </h1>
+            </motion.div>
             <p className="text-xl text-white/80 mb-8 leading-relaxed">
-              Race through endless highways, dodge obstacles, and collect power-ups in this 
-              thrilling endless runner game.
+              Experience our latest release: Highway Dash. Race through endless highways, dodge obstacles, 
+              and collect power-ups in this thrilling endless runner game.
             </p>
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -79,7 +90,7 @@ export function Hero() {
             <div className="relative aspect-video rounded-xl overflow-hidden shadow-[0_0_50px_rgba(0,255,0,0.2)] border border-[#00FF00]/20">
               <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent z-10" />
               <img
-                src="https://images.unsplash.com/photo-1486572788966-cfd3df1f5b42?auto=format&fit=crop&w=2070&q=80"
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=2070&q=80"
                 alt="Highway Dash Gameplay"
                 className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700"
               />
