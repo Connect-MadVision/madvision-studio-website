@@ -20,7 +20,7 @@ const games = [
   {
     title: "Jungle Run 3D",
     description: "Navigate through treacherous temples and ancient ruins in this thrilling endless runner.",
-    image: "https://images.unsplash.com/photo-1533285860212-c85e7140a408?auto=format&fit=crop&w=2070&q=80",
+    image: "https://images.unsplash.com/photo-1592155931584-901ac15763e3?auto=format&fit=crop&w=2070&q=80",
     comingSoon: true
   }
 ];
@@ -49,7 +49,7 @@ export function Games() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-black border-[#00FF00]/20 overflow-hidden hover:border-[#00FF00]/40 transition-all duration-300">
+              <Card className="bg-black border-[#00FF00]/20 overflow-hidden hover:border-[#00FF00]/40 transition-all duration-300 h-full">
                 <div className="relative pt-[100%] overflow-hidden">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <img

@@ -58,7 +58,7 @@ export function Hero() {
               </h1>
             </motion.div>
             <p className="text-xl text-white/80 mb-8 leading-relaxed">
-              Experience our latest release: Highway Dash. Race through endless highways, dodge obstacles, 
+              Experience our latest release: Highway Dash. Run through endless highways, dodge obstacles, 
               and collect power-ups in this thrilling endless runner game.
             </p>
             <motion.div

@@ -28,7 +28,7 @@ export function About() {
           >
             <h2 className="text-4xl font-bold text-white mb-6">About Madvision Studio</h2>
             <p className="text-white/80 mb-6">
-              Founded by passionate gamers, Madvision Studio is dedicated to creating immersive and exciting mobile gaming experiences. Our team combines creativity with technical expertise to deliver games that push the boundaries of mobile entertainment.
+              Founded by passionate gamers, Madvision Studio is dedicated to creating immersive and exciting gaming experiences for both mobile and PC platforms. Our team combines creativity with technical expertise to deliver games that push the boundaries of entertainment across multiple platforms.
             </p>
             <div className="grid grid-cols-2 gap-8">
               <div>
