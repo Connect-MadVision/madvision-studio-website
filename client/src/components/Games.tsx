@@ -18,7 +18,7 @@ const games = [
     comingSoon: true
   },
   {
-    title: "Jungle Runner 3D",
+    title: "Jungle Run 3D",
     description: "Navigate through treacherous temples and ancient ruins in this thrilling endless runner.",
     image: "https://images.unsplash.com/photo-1538485399081-7c8ed0346d9d?auto=format&fit=crop&w=2070&q=80",
     comingSoon: true

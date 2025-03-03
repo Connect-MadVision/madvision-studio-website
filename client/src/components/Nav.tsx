@@ -41,7 +41,7 @@ export function Nav() {
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#00FF00] to-[#FF0000] flex items-center justify-center">
-            <span className="text-lg font-bold text-white">MS</span>
+            <span className="text-lg font-bold text-white">MV</span>
           </div>
           <span className="text-xl font-bold text-white">Madvision Studio</span>
         </div>
