@@ -1,23 +1,13 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { FaTwitter, FaLinkedin, FaGithub, FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaDiscord, FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 const contactInfo = [
   {
-    title: "General Inquiries",
-    email: "contact@madvisionstudio.com",
-    description: "For general questions and information"
-  },
-  {
-    title: "Business Development",
-    email: "business@madvisionstudio.com",
-    description: "For partnerships and business opportunities"
-  },
-  {
-    title: "Technical Support",
-    email: "support@madvisionstudio.com",
-    description: "For game-related support and bug reports"
+    title: "Get in Touch",
+    email: "hello.madvision@gmail.com",
+    description: "For all inquiries, support, and business opportunities"
   }
 ];
 
@@ -53,10 +43,10 @@ const socialLinks = [
     color: "hover:text-blue-500"
   },
   {
-    name: "GitHub",
-    icon: FaGithub,
-    url: "https://github.com",
-    color: "hover:text-purple-500"
+    name: "Discord",
+    icon: FaDiscord,
+    url: "https://discord.gg",
+    color: "hover:text-indigo-500"
   }
 ];
 
@@ -100,7 +90,7 @@ export function Contact() {
             ))}
           </motion.div>
 
-          {/* Social Links and Office Info */}
+          {/* Social Links */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -110,7 +100,7 @@ export function Contact() {
             <Card className="bg-black/40 border-[#00FF00]/20 backdrop-blur-sm h-full">
               <CardContent className="p-6">
                 <h3 className="text-2xl font-bold text-white mb-6">Follow Our Journey</h3>
-                <div className="grid grid-cols-3 gap-6 mb-8">
+                <div className="grid grid-cols-3 gap-6">
                   {socialLinks.map((social) => (
                     <HoverCard key={social.name}>
                       <HoverCardTrigger>
@@ -129,15 +119,6 @@ export function Contact() {
                       </HoverCardContent>
                     </HoverCard>
                   ))}
-                </div>
-
-                <div className="mt-8 p-6 bg-[#00FF00]/5 rounded-lg border border-[#00FF00]/10">
-                  <h4 className="text-xl font-bold text-white mb-4">Visit Our Studio</h4>
-                  <div className="space-y-2 text-white/80">
-                    <p>123 Game Street</p>
-                    <p>Digital District</p>
-                    <p>GameCity, GC 12345</p>
-                  </div>
                 </div>
               </CardContent>
             </Card>

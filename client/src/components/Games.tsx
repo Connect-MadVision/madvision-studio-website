@@ -7,19 +7,19 @@ const games = [
   {
     title: "Highway Dash",
     description: "Race through endless highways in this adrenaline-pumping endless runner.",
-    image: "https://images.unsplash.com/photo-1486572788966-cfd3df1f5b42?auto=format&fit=crop&w=2070&q=80",
+    image: "/attached_assets/HIGHWAY DASH Icon.png",
     playStoreLink: "https://play.google.com/store"
   },
   {
-    title: "Cyber Assault",
-    description: "A cyberpunk FPS set in a dystopian future where you fight against corrupted AI.",
-    image: "https://images.unsplash.com/photo-1551771685-c367c9127a03?auto=format&fit=crop&w=2070&q=80",
+    title: "Zombie Survival",
+    description: "Fight for survival in a post-apocalyptic world overrun by the undead. Strategic shooting meets survival horror.",
+    image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=2070&q=80",
     comingSoon: true
   },
   {
-    title: "Neon Riders",
-    description: "Race through neon-lit streets in this futuristic racing game.",
-    image: "https://images.unsplash.com/photo-1594652634010-275456c808d0?auto=format&fit=crop&w=2070&q=80",
+    title: "Jungle Runner 3D",
+    description: "Navigate through treacherous temples and ancient ruins in this thrilling endless runner.",
+    image: "https://images.unsplash.com/photo-1601226809816-b8c32440158a?auto=format&fit=crop&w=2070&q=80",
     comingSoon: true
   }
 ];
