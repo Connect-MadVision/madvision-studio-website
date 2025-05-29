@@ -85,6 +85,7 @@ inmobi.com, ef083d721beb4c0f8776ced01e262c03, RESELLER, 83e75a7ae333ca9d
 kidoz.net, 14260, RESELLER, a109366414b7335e
 krushmedia.com, ajxf6R585a9m6Catvk, RESELLER
 lacunads.com, LCb555b3bc8667a09a, direct
+lacunads.com, LCb555b3bc8667a09a, RESELLER
 lacunads.com, lcb555b3bc8667a09a, RESELLER
 lijit.com, 273050, RESELLER, fafdf38b16bf6b2b
 lijit.com, 417620, RESELLER, fafdf38b16bf6b2b
